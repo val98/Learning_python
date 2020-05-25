@@ -73,7 +73,10 @@ for name, seq in biotools.read_fasta(arg.input):
 	for i in range(len(seq)-arg.window):
 		subseq = seq[i:i+arg.window]
 		hydrophobicity = getHP(subseq, scale[arg.method])
-		print("\t", subseq, hydrophobicity)
+		#print("\t", subseq, hydrophobicity)
+		tab = "\t"
+		print('%s %s %.3f' % (tab, subseq, hydrophobicity))
+
 
 
     #print(name, len(seq))
